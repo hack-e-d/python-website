@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from passlib.hash import sha256_crypt
-import mysql.connector as mariadb
+
 import os
 import operator
 app = Flask(__name__)
