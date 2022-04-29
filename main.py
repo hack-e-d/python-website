@@ -23,7 +23,7 @@ def do_admin_login():
   storedUserName = 'admin'
   storedPassword = 'admin'
 
-  if ((userName == storedUserName) && (password == storedPassword)):
+  if ((userName == storedUserName) and (password == storedPassword)):
     account = True
 
   if account:
