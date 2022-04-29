@@ -5,7 +5,6 @@ from passlib.hash import sha256_crypt
 import os
 import operator
 app = Flask(__name__)
-mariadb_connect = mariadb.connect(user='chooseAUserName', password='chooseAPassword', databse='Login')
 @app.route('/')
 def home():
   if not session.get('logged_in'):
