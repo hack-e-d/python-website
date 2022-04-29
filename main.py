@@ -31,7 +31,7 @@ def do_admin_login():
     flash('wrong password!')
   return home()
 
-@app.route('logout')
+@app.route('/logout')
 def logout():
   session['logged_in'] = False
   return home()
