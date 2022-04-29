@@ -20,8 +20,8 @@ def do_admin_login():
   userName = login['username']
   password = login['password']
 
-  var storedUserName = 'admin'
-  var storedPassword = 'admin'
+  storedUserName = 'admin'
+  storedPassword = 'admin'
 
   if ((userName == storedUserName) && (password == storedPassword)):
     account = True
