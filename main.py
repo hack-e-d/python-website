@@ -1,10 +1,11 @@
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from passlib.hash import sha256_crypt
-
+import mysql.connector as mariadb
 import os
 import operator
 app = Flask(__name__)
+mariadb_connect = mariadb.connect(user='chooseAUserName', password='chooseAPassword', databse='Login')
 @app.route('/')
 def home():
   if not session.get('logged_in'):
@@ -19,8 +20,8 @@ def do_admin_login():
   userName = login['username']
   password = login['password']
 
-  storedUserName = 'admin'
-  storedPassword = 'admin'
+  var storedUserName = 'admin'
+  var storedPassword = 'admin'
 
   if ((userName == storedUserName) and (password == storedPassword)):
     account = True
@@ -31,7 +32,7 @@ def do_admin_login():
     flash('wrong password!')
   return home()
 
-@app.route('/logout')
+@app.route('logout')
 def logout():
   session['logged_in'] = False
   return home()
